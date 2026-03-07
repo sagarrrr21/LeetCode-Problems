@@ -43,6 +43,8 @@ s[i] is either '0' or '1'.
 #include <bits/stdc++.h>
 using namespace std;
 
+// Time Complexity : O(n)
+// Space Complexity : o(n)
 class Solution
 {
 public:
@@ -75,6 +77,45 @@ public:
                 if (s[l] != s1[l])
                     flip1--;
                 if (s[l] != s2[l])
+                    flip2--;
+                l++;
+            }
+            if (r - l + 1 == n)
+            {
+                ans = min({ans, flip1, flip2});
+            }
+            r++;
+        }
+        return ans;
+    }
+};
+
+// Time Complexity : O(n)
+// Space Complexity : O(n)
+class Solution
+{
+public:
+    int minFlips(string s)
+    {
+        int n = s.length();
+        int ans = INT_MAX;
+        int flip1 = 0, flip2 = 0, l = 0, r = 0;
+
+        while (r < 2 * n)
+        {
+            char ch1 = (r & 1) ? '0' : '1';
+            char ch2 = (r & 1) ? '1' : '0';
+            if (s[r % n] != ch1)
+                flip1++;
+            if (s[r % n] != ch2)
+                flip2++;
+            if (r - l + 1 > n)
+            {
+                ch1 = (l & 1) ? '0' : '1';
+                ch2 = (l & 1) ? '1' : '0';
+                if (s[l % n] != ch1)
+                    flip1--;
+                if (s[l % n] != ch2)
                     flip2--;
                 l++;
             }
