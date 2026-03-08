@@ -34,17 +34,10 @@ Explanation:
 The minimum capacity that can store the item is 3, and it appears at indices 0 and 3. Thus, the answer is 0.
 
 Example 3:
-
 Input: capacity = [4], itemSize = 5
-
 Output: -1
-
 Explanation:
-
 No box has enough capacity to store the item, so the answer is -1.
-
- 
-
 Constraints:
 
 1 <= capacity.length <= 100
