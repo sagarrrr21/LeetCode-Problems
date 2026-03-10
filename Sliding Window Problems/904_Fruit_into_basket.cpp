@@ -51,6 +51,8 @@ using namespace std;
 
 using namespace std;
 
+// Time Complexity : O(n x n)
+// Space Complexity : O(k)
 int Brute_Force(vector<int> v, int k)
 {
     int n = v.size(), max_len = 0;
