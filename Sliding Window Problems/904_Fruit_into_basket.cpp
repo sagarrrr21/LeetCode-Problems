@@ -105,6 +105,8 @@ int optimal_Approach(vector<int> v, int k)
     return max_len;
 }
 
+// Time Complexity : O(n)
+// Space Complexity : O(k)
 int more_Optimal(vector<int> v, int k)
 {
     int l = 0, r = 0, max_len = 0, n = v.size();
