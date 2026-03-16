@@ -23,7 +23,6 @@ Explanation: The rhombus shapes for the three biggest distinct rhombus sums are 
 - Green: 5 + 200 + 4 + 2 = 211
 Example 2:
 
-
 Input: grid = [[1,2,3],[4,5,6],[7,8,9]]
 Output: [20,9,8]
 Explanation: The rhombus shapes for the three biggest distinct rhombus sums are depicted above.
@@ -35,8 +34,6 @@ Example 3:
 Input: grid = [[7,7,7]]
 Output: [7]
 Explanation: All three possible rhombus sums are the same, so return [7].
-
-
 Constraints:
 
 m == grid.length
