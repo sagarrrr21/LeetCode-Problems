@@ -34,6 +34,8 @@ n == grid[i].length
 1 <= k <= 109
 */
 
+// Time Complexity : O(n x m)
+// Space Complexity : O(n x m)
 class Solution
 {
 public:
@@ -67,6 +69,38 @@ public:
             for (int j = 0; j < m; j++)
                 if (pf[i][j] <= k)
                     ans++;
+        }
+        return ans;
+    }
+};
+
+// Time Comeplxity : O(n x m)
+// Space Complexity : O(m)
+
+class Solution
+{
+public:
+    int countSubmatrices(vector<vector<int>> &grid, int k)
+    {
+        int n = grid.size(), m = grid[0].size();
+
+        vector<int> prev(m, 0), cur(m, 0);
+        int ans = 0;
+
+        for (int i = 0; i < n; i++)
+        {
+            for (int j = 0; j < m; j++)
+            {
+                int up = (i > 0 ? prev[j] : 0);
+                int left = (j > 0 ? cur[j - 1] : 0);
+                int diag = (i > 0 && j > 0 ? prev[j - 1] : 0);
+
+                cur[j] = grid[i][j] + up + left - diag;
+
+                if (cur[j] <= k)
+                    ans++;
+            }
+            prev = cur;
         }
         return ans;
     }
