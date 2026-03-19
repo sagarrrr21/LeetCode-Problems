@@ -51,6 +51,8 @@ Constraints:
 grid[i][j] is either 'X', 'Y', or '.'.
 */
 
+// Time Complexity : O(n x m)
+// space Complexity : O(n x m) + O(n x m)
 #include <bits/stdc++.h>
 using namespace std;
 
