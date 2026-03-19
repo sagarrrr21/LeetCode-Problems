@@ -101,3 +101,25 @@ public:
         return ans;
     }
 };
+
+class Solution
+{
+public:
+    int longestSubarray(vector<int> &nums)
+    {
+        int n = nums.size();
+        int last_zero = -1, ans = 0;
+        int i = 0;
+        for (int j = 0; j < n; j++)
+        {
+            if (nums[j] == 0)
+            {
+                i = last_zero + 1;
+                last_zero = j;
+            }
+
+            ans = max(ans, j - i);
+        }
+        return ans;
+    }
+};
