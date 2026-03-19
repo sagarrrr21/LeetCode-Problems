@@ -35,6 +35,8 @@ Constraints:
 nums[i] is either 0 or 1.
 */
 
+// Time Complexity : O(n x m)
+// space Complexity : O(1) Constant
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -78,6 +80,8 @@ public:
     }
 };
 
+// Time Complexity : O(n + n)
+// space Complexity : O(1) Constant
 class Solution2
 {
 public:
@@ -102,7 +106,9 @@ public:
     }
 };
 
-class Solution
+// Time Complexity : O(n)
+// space Complexity : O(1) Constant
+class Solution3
 {
 public:
     int longestSubarray(vector<int> &nums)
