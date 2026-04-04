@@ -60,9 +60,11 @@ The testcases are generated such that there is only one possible originalText.
 
 #include <bits/stdc++.h>
 using namespace std;
-class Solution {
+class Solution
+{
 public:
-    string decodeCiphertext(string encodedText, int rows) {
+    string decodeCiphertext(string encodedText, int rows)
+    {
         if (encodedText == "")
             return "";
         int n = encodedText.length();
@@ -70,20 +72,47 @@ public:
 
         vector<vector<char>> mat(rows, vector<char>(cols, ' '));
         int idx = 0;
-        for (int i = 0; i < rows; i++) {
-            for (int j = 0; j < cols; j++) {
+        for (int i = 0; i < rows; i++)
+        {
+            for (int j = 0; j < cols; j++)
+            {
                 mat[i][j] = encodedText[idx];
                 idx++;
             }
         }
         string res = "";
-        for (int i = 0; i < cols; i++) {
+        for (int i = 0; i < cols; i++)
+        {
             int j = 0;
             int k = i;
 
-            while (j < rows && k < cols) {
+            while (j < rows && k < cols)
+            {
                 res += mat[j][k];
                 j++, k++;
+            }
+        }
+        while (res.back() == ' ')
+            res.pop_back();
+        return res;
+    }
+};
+
+class Solution2
+{
+public:
+    string decodeCiphertext(string encodedText, int rows)
+    {
+        if (encodedText == "")
+            return "";
+        int n = encodedText.length();
+        int cols = n / rows;
+        string res = "";
+        for (int i = 0; i < cols; i++)
+        {
+            for (int j = i; j < n; j += cols + 1)
+            {
+                res += encodedText[j];
             }
         }
         while (res.back() == ' ')
